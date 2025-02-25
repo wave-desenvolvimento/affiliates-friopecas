@@ -1,4 +1,4 @@
-import type { AffiliatesFilterInput } from 'vtex.affiliates'
+import type { AffiliatesFilterInput } from 'friopecas.affiliates'
 
 export const parseAffiliatesFilters = ({
   searchTerm,
@@ -15,6 +15,7 @@ export const parseAffiliatesFilters = ({
   }
 
   if (affiliateList && !searchTerm) {
+    //@ts-ignore
     affiliateList.map((id) => id !== '' && affiliateIdFilter.push(`id=${id}`))
     const joinaffiliateIdFilter = `(${affiliateIdFilter.join(' OR ')})`
 
