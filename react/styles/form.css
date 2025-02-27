@@ -12,16 +12,12 @@
     flex-direction: column;
     gap: 20px;
     font-family: "Quicksand", serif;
-    padding: 17.5px 16px;
 
 
 }
 
 @media (min-width:1024px) {
     .affiliate-form__page {
-        margin: 35px auto;
-        max-width: 1440px;
-        padding: 0 32px;
         gap: 40px;
     }
 }

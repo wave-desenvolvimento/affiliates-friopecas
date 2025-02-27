@@ -8,15 +8,26 @@ const SvgListCard = () => {
         </svg>
     );
 };
+type Props = {
+    benefits: string[];
+};
 
-const BenefitsList = ({ benefits }:any) => {
+const BenefitsList = ({ benefits = [] }: Props) => {
+    const benefitsData = benefits.length > 0 ? benefits : [
+        "Vantajoso em relação à área de piso, distância e desnível entre as unidades condensadoras e evaporadoras;",
+        "Diversidade nos modelos e capacidades das unidades;",
+        "Maior eficiência energética em sistemas de expansão direta;",
+        "Grande eletrônica embarcada com automação simples;",
+        "Controle individualizado e Autodiagnóstico e relatório de erros."
+    ];
+
     return (
         <div className={style['benefits-container']}>
             <h2 className={style['benefits-title']}>
                 <span>+</span> Benefícios do <span>Clube!</span>
             </h2>
             <div className={style['benefits-cards']}>
-                {benefits.map((benefit, index) => (
+                {benefitsData.map((benefit, index) => (
                     <div key={index} className={style['benefits-card']}>
                         <SvgListCard />
                         <p className={style['benefits-label']}>{benefit}</p>
@@ -26,6 +37,7 @@ const BenefitsList = ({ benefits }:any) => {
         </div>
     );
 };
+
 
 BenefitsList.schema = {
     title: "Lista de Benefícios",
@@ -39,13 +51,6 @@ BenefitsList.schema = {
                 type: "string",
                 title: "Benefício"
             },
-            default: [
-                "Vantajoso em relação à área de piso, distância e desnível entre as unidades condensadoras e evaporadoras;",
-                "Diversidade nos modelos e capacidades das unidades;",
-                "Maior eficiência energética em sistemas de expansão direta;",
-                "Grande eletrônica embarcada com automação simples;",
-                "Controle individualizado e Autodiagnóstico e relatório de erros."
-            ]
         }
     }
 };

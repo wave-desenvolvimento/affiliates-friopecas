@@ -97,7 +97,6 @@ function AffiliateForm() {
                 />
               ) : null}
             </div>
-
             <Formik
               initialValues={initialValues}
               onSubmit={async (values) => {

@@ -51,6 +51,17 @@
     width: 100%;
 }
 
+.AffiliateInfocard-leftCol {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.AffiliateInfocard-rightCol img {
+    border-radius: 20px;
+    width: 100%;
+}
+
 @media (min-width: 1024px) {
     .AffiliateInfocard-wrapper {
         display: grid;
