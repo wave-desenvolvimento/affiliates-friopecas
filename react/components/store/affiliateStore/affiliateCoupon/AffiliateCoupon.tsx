@@ -8,7 +8,7 @@ const CouponCard = ({ discount, code }: { discount: string; code: string }) => {
     const copyToClipboard = () => {
         navigator.clipboard.writeText(code);
         setCopied(true);
-        setTimeout(() => setCopied(false), 2000);
+        setTimeout(() => setCopied(false), 4000);
     };
 
     return (

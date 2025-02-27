@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./styles.css";
-import { User, SvgInfocard, Training, Phone } from '../../Icons'
+import { User, SvgInfocard, Training, Phone, Invoice } from '../../Icons'
 
 interface QuickAccessItem {
     label: string;
@@ -35,29 +35,29 @@ const ClubeFriopecas: StorefrontFunctionComponent<ClubeFriopecasProps> = ({
                         <p>Clube Friopeças</p>
                     </div>
 
-                    <h3 className={styles["quickAcess-subtitle"]}>Aproveite os <span>benefícios</span>
+                    <h3 className={styles["quickAcess-subtitle"]}>Aproveite os <span> benefícios </span>
                         do Clube Friopeças!</h3>
 
-                    <p>Acessos rápidos:</p>
+                    <p className={styles['quickAcess-label']}>Acessos rápidos:</p>
+                    <div className={styles['quickAcessgrid-btn']}>
+                        <a href="" className={styles['quickAcess-btn1']}>
+                            <User />
+                            Minha Conta
+                        </a>
+                        <a href="" className={styles['quickAcess-btn1']}>
+                            <Training />
+                            Treinamentos
+                        </a>
+                        <a href="" className={styles['quickAcess-btn2']}>
+                            <Invoice />
+                            Extrato de Comissões
+                        </a>
+                        <a href="" className={styles['quickAcess-btn3']}>
+                            <Phone />
+                            Suporte
+                        </a>
+                    </div>
                 </div>
-            </div>
-            <div className={styles.quickAccessGrid}>
-                <a href="" className={styles['']}>
-                    <User />
-                    Minha Conta
-                </a>
-                <a href="" className={styles['']}>
-                    <Training />
-                    Treinamentos
-                </a>
-                <a href="" className={styles['']}>
-                    <Invoice />
-                    Extrato de Comissões
-                </a>
-                <a href="" className={styles['']}>
-                    <Phone />
-                    Suporte
-                </a>
             </div>
         </div>
     );
