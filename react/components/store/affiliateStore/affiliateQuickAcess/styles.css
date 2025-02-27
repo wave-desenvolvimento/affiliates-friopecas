@@ -1,0 +1,61 @@
+.container {
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    text-align: center;
+  }
+  
+  .container h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .highlight {
+    color: #007bff;
+  }
+  
+  .subTitle {
+    font-size: 16px;
+    color: #666;
+    margin-top: 10px;
+  }
+  
+  .quickAccessGrid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+    justify-content: center;
+  }
+  
+  .primaryButton,
+  .secondaryButton {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 14px;
+    text-decoration: none;
+    transition: background 0.3s ease-in-out;
+  }
+  
+  .primaryButton {
+    background-color: #007bff;
+    color: #fff;
+    border: 1px solid #007bff;
+  }
+  
+  .primaryButton:hover {
+    background-color: #0056b3;
+  }
+  
+  .secondaryButton {
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #ccc;
+  }
+  
+  .secondaryButton:hover {
+    background-color: #f1f1f1;
+  }
+  

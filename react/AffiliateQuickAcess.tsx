@@ -1,0 +1,2 @@
+import AffiliateQuickAcess from './components/store/affiliateStore/affiliateQuickAcess/AffiliateQuickAcess'
+export default AffiliateQuickAcess
