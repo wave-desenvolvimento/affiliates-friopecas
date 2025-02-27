@@ -62,6 +62,7 @@ function ErrorMessage(props: Props) {
             <li className="flex flex-row list pv2" key={item.code}>
               <IconFailure />
               <p className="ph3 mv0">
+                {/* @ts ignore */}
                 <FormattedMessage id={errorMessages[item.code]} />
               </p>
             </li>

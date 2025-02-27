@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { useLazyQuery } from 'react-apollo'
 import { useIntl } from 'react-intl'
-import { Input } from 'vtex.styleguide'
+// import { Input } from 'vtex.styleguide'
+import style from '../styles/style.css'
 
 import GET_AFFILIATE_STORE_NAME_QUERY from '../../../../graphql/getAffiliateStoreName.graphql'
 import type { ValueType } from '../../../../AffiliateForm'
@@ -51,84 +52,117 @@ function AffiliateFormGeneral(props: Props) {
   }, [data, newSlug])
 
   return (
-    <div className="pv5">
-      <h3>{intl.formatMessage(storeMessages.affiliateGeneralInfo)}</h3>
-      <div className="flex flex-column-s flex-row-m">
-        <div className="pr3 w-100-s w-50-m">
-          <Input
-            required
-            name="name"
-            placeholder={intl.formatMessage(
-              storeMessages.affiliateNamePlaceholder
-            )}
-            label={intl.formatMessage(storeMessages.affiliateNameLabel)}
-            value={values.name}
-            onChange={handleChange}
-            onBlur={handleBlur}
-          />
-          <Input
-            required
-            placeholder={intl.formatMessage(storeMessages.affiliateEmailLabel)}
-            name="email"
-            type="email"
-            label={intl.formatMessage(storeMessages.affiliateEmailLabel)}
-            value={values.email}
-            onChange={handleChange}
-            onBlur={handleBlur}
-          />
-          <Input
-            required
-            name="phone"
-            type="tel"
-            pattern="\d*"
-            placeholder={intl.formatMessage(storeMessages.affiliateNoSpecial)}
-            label={intl.formatMessage(storeMessages.affiliatePhoneLabel)}
-            value={values.phone}
-            onChange={handleChange}
-            onBlur={handleBlur}
-          />
-          <Input
-            required
-            name="slug"
-            placeholder={intl.formatMessage(storeMessages.affiliateNoSpecial)}
-            label={intl.formatMessage(storeMessages.affiliateSlugLabel)}
-            value={values.slug}
-            onChange={handleChange}
-            onBlur={handleBlur}
-          />
+    <div className={style["affiliate-form__container--section"]}>
+      <h3>Preencha o formulário e faça parte do Clube</h3>
+      <div className={style['affiliate-form__wrapper']}>
+        <div className={style["affiliate-form__col"]}>
+          <div>
+            <label htmlFor={intl.formatMessage(storeMessages.affiliateNameLabel)}>
+              Nome Completo ou Razão Social:<span>*</span>
+            </label>
+            <input
+              required
+              name="name"
+              placeholder={intl.formatMessage(
+                storeMessages.affiliateNamePlaceholder
+              )}
+
+              value={values.name}
+              onChange={handleChange}
+              onBlur={handleBlur}
+            />
+          </div>
+          <div>
+            <label htmlFor={intl.formatMessage(storeMessages.affiliateEmailLabel)}>
+              E-mail:<span>*</span>
+            </label>
+            <input
+              required
+              placeholder={intl.formatMessage(storeMessages.affiliateEmailLabel)}
+              name="email"
+              type="email"
+              value={values.email}
+              onChange={handleChange}
+              onBlur={handleBlur}
+            />
+          </div>
+          <div>
+
+            <label htmlFor={intl.formatMessage(storeMessages.affiliatePhoneLabel)}>
+              Telefone:<span>*</span>
+            </label>
+            <input
+              required
+              name="phone"
+              type="tel"
+              pattern="\d*"
+              placeholder={intl.formatMessage(storeMessages.affiliateNoSpecial)}
+              value={values.phone}
+              onChange={handleChange}
+              onBlur={handleBlur}
+            />
+          </div>
+          <div>
+            <label htmlFor={intl.formatMessage(storeMessages.affiliateSlugLabel)}>
+              Identificador da URL *
+
+            </label>
+            <input
+              required
+              name="slug"
+              placeholder={intl.formatMessage(storeMessages.affiliateNoSpecial)}
+              value={values.slug}
+              onChange={handleChange}
+              onBlur={handleBlur}
+            />
+          </div>
         </div>
-        <div className="w-100-s w-50-m">
-          <Input
-            name="storeName"
-            placeholder={intl.formatMessage(
-              storeMessages.affiliateStoreNameLabel
-            )}
-            label={intl.formatMessage(storeMessages.affiliateStoreNameLabel)}
-            value={values.storeName}
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-              handleStoreName(e)
-            }
-            onBlur={handleBlur}
-          />
-          <Input
-            name="documentType"
-            placeholder={intl.formatMessage(
-              storeMessages.affiliateDocumentTypeLabel
-            )}
-            label={intl.formatMessage(storeMessages.affiliateDocumentTypeLabel)}
-            value={values.documentType}
-            onChange={handleChange}
-            onBlur={handleBlur}
-          />
-          <Input
-            name="document"
-            placeholder={intl.formatMessage(storeMessages.affiliateNoSpecial)}
-            label={intl.formatMessage(storeMessages.affiliateDocumentLabel)}
-            pattern="\d*"
-            value={values.document}
-            onChange={handleChange}
-            onBlur={handleBlur}
-          />
+        <div className={style["affiliate-form__col"]}>
+          <div>
+
+            <label htmlFor={intl.formatMessage(storeMessages.affiliateStoreNameLabel)}>
+              Nome da loja
+            </label>
+            <input
+              name="storeName"
+              placeholder={intl.formatMessage(
+                storeMessages.affiliateStoreNameLabel
+              )}
+              value={values.storeName}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                handleStoreName(e)
+              }
+              onBlur={handleBlur}
+            />
+          </div>
+          <div>
+
+            <label htmlFor={intl.formatMessage(storeMessages.affiliateDocumentTypeLabel)}>
+              tipo de documento
+            </label>
+            <input
+              name="documentType"
+              placeholder={intl.formatMessage(
+                storeMessages.affiliateDocumentTypeLabel
+              )}
+              value={values.documentType}
+              onChange={handleChange}
+              onBlur={handleBlur}
+            />
+          </div>
+          <div>
+            <label htmlFor={intl.formatMessage(storeMessages.affiliateDocumentLabel)}>
+              CPF/CNPJ:<span>*</span>
+            </label>
+            <input
+              name="document"
+              placeholder={intl.formatMessage(storeMessages.affiliateNoSpecial)}
+              pattern="\d*"
+              value={values.document}
+              onChange={handleChange}
+              onBlur={handleBlur}
+            />
+          </div>
         </div>
       </div>
     </div>

@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=MuseoModerno:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&display=swap');
+
+:root {
+    --primary: #004B87;
+    --secondary: #1DA7E0;
+    --gray: #7B7B7B;
+    --gray-light: #F3F3F3;
+}
+
+.container-login {
+    width: 100%;
+    background-color: #F3F3F3;
+    height: 160px;
+    margin: auto;
+    border-radius: 20px;
+}
+
+.container-login__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    height: 100%;
+}
+
+.container-login__wrapper h3 {
+    color: #004B87;
+    font-weight: 700;
+    font-size: 20px;
+    margin: 0;
+
+
+}
+
+.container-login__wrapper a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 330px;
+    width: 100%;
+    padding: 20px;
+    color: #F3F3F3;
+    background-color: #004B87;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: 700;
+    text-shadow: none;
+}

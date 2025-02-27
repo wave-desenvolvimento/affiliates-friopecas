@@ -42,5 +42,14 @@
   },
   "affiliate-form": {
     "component": "AffiliateForm"
+  },
+  "affiliate-login": {
+    "component": "AffiliateLogin"
+  },
+  "affiliate-infocard": {
+    "component": "AffiliateInfocardSection"
+  },
+  "affiliate-benefits": {
+    "component": "BenefitsList"
   }
 }

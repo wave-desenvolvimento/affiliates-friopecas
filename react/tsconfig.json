@@ -13,5 +13,5 @@
     "./typings/*.d.ts",
     "./**/*.tsx",
     "./**/*.ts"
-  ]
+, "components/store/affiliateFormSections/AffiliateBenefits/BenefitsList.tsx"  ]
 }

@@ -1,0 +1,2 @@
+import AffiliateInfocardSection from './components/store/affiliateFormSections/affiliateInfocard/AffiliateInfocardSection'
+export default AffiliateInfocardSection

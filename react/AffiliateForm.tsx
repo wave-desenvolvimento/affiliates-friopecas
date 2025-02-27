@@ -1,15 +1,16 @@
 import React from 'react'
 import { useMutation } from 'react-apollo'
 import { useIntl } from 'react-intl'
-import { Button, Spinner, ToastProvider, ToastConsumer } from 'vtex.styleguide'
+import { Spinner, ToastProvider, ToastConsumer } from 'vtex.styleguide'
 import { Formik, Form } from 'formik'
-
+import styles from './styles/form.css'
 import ADD_AFFILIATE from './graphql/addAffiliate.graphql'
 import { storeMessages } from './utils/messages'
 import ErrorMessage from './components/store/ErrorMessage'
 import AffiliateFormGeneral from './components/store/affiliateFormSections/AffiliateFormGeneral'
 import AffiliateFormAddress from './components/store/affiliateFormSections/AffiliateFormAddress'
 import AffiliateFormMarketing from './components/store/affiliateFormSections/AffiliateFormMarketing'
+
 
 export interface ValueType {
   name: string
@@ -81,7 +82,7 @@ function AffiliateForm() {
     <ToastProvider>
       <ToastConsumer>
         {({ showToast }: { showToast: (props: ToastProps) => void }) => (
-          <section>
+          <section className={styles["affiliate-form__page"]}>
             <div>
               {data ? (
                 <div className="w-100 center mw8-m ph3 pa5 mv8 bg-washed-green flex items-center">
@@ -96,6 +97,7 @@ function AffiliateForm() {
                 />
               ) : null}
             </div>
+
             <Formik
               initialValues={initialValues}
               onSubmit={async (values) => {
@@ -109,30 +111,30 @@ function AffiliateForm() {
               }}
             >
               {({ values, handleChange, handleBlur, setFieldValue }) => (
-                <Form className="center mw8-m ph3">
-                  <AffiliateFormGeneral
-                    values={values}
-                    handleChange={handleChange}
-                    handleBlur={handleBlur}
-                    setValue={setFieldValue}
-                  />
-                  <AffiliateFormAddress
-                    values={values}
-                    handleChange={handleChange}
-                    handleBlur={handleBlur}
-                  />
-                  <AffiliateFormMarketing
-                    values={values}
-                    handleChange={handleChange}
-                    handleBlur={handleBlur}
-                  />
-                  <Button type="submit" disabled={loading}>
-                    {loading ? (
-                      <Spinner />
-                    ) : (
-                      intl.formatMessage(storeMessages.affiliateRegisterButton)
-                    )}
-                  </Button>
+                <Form className={styles["affiliate-form__container"]}>
+                  <div className={styles["affiliate-form__container-wrapper"]}>
+                    <AffiliateFormGeneral
+                      values={values}
+                      handleChange={handleChange}
+                      handleBlur={handleBlur}
+                      setValue={setFieldValue}
+                    />
+                    <AffiliateFormAddress
+                      values={values}
+                      handleChange={handleChange}
+                      handleBlur={handleBlur}
+                    />
+                    <AffiliateFormMarketing
+                      values={values}
+                      handleChange={handleChange}
+                      handleBlur={handleBlur}
+                    />
+                    <button className={styles["affiliate-form__submit"]} type="submit" disabled={loading}>
+                      {loading ? (
+                        <Spinner />
+                      ) : (intl.formatMessage(storeMessages.affiliateRegisterButton))}
+                    </button>
+                  </div>
                 </Form>
               )}
             </Formik>

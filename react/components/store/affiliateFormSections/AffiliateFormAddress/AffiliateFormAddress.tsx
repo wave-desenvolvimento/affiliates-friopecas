@@ -1,6 +1,6 @@
 import React from 'react'
 import { useIntl } from 'react-intl'
-import { Input } from 'vtex.styleguide'
+import style from '../styles/style.css'
 
 import type { ValueType } from '../../../../AffiliateForm'
 import { storeMessages } from '../../../../utils/messages'
@@ -16,83 +16,114 @@ function AffiliateFormAddress(props: Props) {
   const intl = useIntl()
 
   return (
-    <div className="pv5">
-      <h3>{intl.formatMessage(storeMessages.affiliateAddressInfo)}</h3>
-      <div className="flex flex-column-s flex-row-m">
-        <div className="pr3 w-100-s w-50-m">
-          <Input
-            name="address.postalCode"
-            placeholder={intl.formatMessage(storeMessages.affiliateNoSpecial)}
-            label={intl.formatMessage(storeMessages.affiliateCEPLabel)}
-            pattern="\d*"
-            value={values.address.postalCode}
-            onChange={handleChange}
-            onBlur={handleBlur}
-          />
-          <Input
-            name="address.number"
-            placeholder={intl.formatMessage(storeMessages.affiliateNumberLabel)}
-            label={intl.formatMessage(storeMessages.affiliateNumberLabel)}
-            value={values.address.number}
-            onChange={handleChange}
-            onBlur={handleBlur}
-          />
-          <Input
-            name="address.reference"
-            placeholder={intl.formatMessage(
-              storeMessages.affiliateReferenceLabel
-            )}
-            label={intl.formatMessage(storeMessages.affiliateReferenceLabel)}
-            value={values.address.reference}
-            onChange={handleChange}
-            onBlur={handleBlur}
-          />
-          <Input
-            name="address.state"
-            placeholder={intl.formatMessage(storeMessages.affiliateStateLabel)}
-            label={intl.formatMessage(storeMessages.affiliateStateLabel)}
-            value={values.address.state}
-            onChange={handleChange}
-            onBlur={handleBlur}
-          />
+    <div className={style["affiliate-form__container--section"]}>
+      <div className={style['affiliate-form__wrapper']}>
+        <div className={style["affiliate-form__col"]}>
+          <div>
+            <label htmlFor={intl.formatMessage(storeMessages.affiliateCEPLabel)}>
+              Cep:<span>*</span>
+            </label>
+            <input
+              name="address.postalCode"
+              placeholder={intl.formatMessage(storeMessages.affiliateNoSpecial)}
+              pattern="\d*"
+              value={values.address.postalCode}
+              onChange={handleChange}
+              onBlur={handleBlur}
+            />
+          </div>
+          <div>
+            <label htmlFor={intl.formatMessage(storeMessages.affiliateNumberLabel)}>
+              Número:<span>*</span>
+            </label>
+            <input
+              name="address.number"
+              placeholder={intl.formatMessage(storeMessages.affiliateNumberLabel)}
+              value={values.address.number}
+              onChange={handleChange}
+              onBlur={handleBlur}
+            />
+          </div>
+          <div>
+            <label htmlFor={intl.formatMessage(storeMessages.affiliateReferenceLabel)}>
+              Ponto de Referência:<span>*</span>
+            </label>
+            <input
+              name="address.reference"
+              placeholder={intl.formatMessage(
+                storeMessages.affiliateReferenceLabel
+              )}
+              value={values.address.reference}
+              onChange={handleChange}
+              onBlur={handleBlur}
+            />
+          </div>
+          <div>
+            <label htmlFor={intl.formatMessage(storeMessages.affiliateStateLabel)}>
+              Estado:<span>*</span>
+            </label>
+            <input
+              name="address.state"
+              placeholder={intl.formatMessage(storeMessages.affiliateStateLabel)}
+              value={values.address.state}
+              onChange={handleChange}
+              onBlur={handleBlur}
+            />
+          </div>
         </div>
-        <div className="w-100-s w-50-m">
-          <Input
-            name="address.street"
-            placeholder={intl.formatMessage(storeMessages.affiliateStreetLabel)}
-            label={intl.formatMessage(storeMessages.affiliateStreetLabel)}
-            value={values.address.street}
-            onChange={handleChange}
-            onBlur={handleBlur}
-          />
-          <Input
-            name="address.neighborhood"
-            placeholder={intl.formatMessage(
-              storeMessages.affiliateDistrictLabel
-            )}
-            label={intl.formatMessage(storeMessages.affiliateDistrictLabel)}
-            value={values.address.neighborhood}
-            onChange={handleChange}
-            onBlur={handleBlur}
-          />
-          <Input
-            name="address.city"
-            placeholder={intl.formatMessage(storeMessages.affiliateCityLabel)}
-            label={intl.formatMessage(storeMessages.affiliateCityLabel)}
-            value={values.address.city}
-            onChange={handleChange}
-            onBlur={handleBlur}
-          />
-          <Input
-            name="address.country"
-            placeholder={intl.formatMessage(
-              storeMessages.affiliateCountryLabel
-            )}
-            label={intl.formatMessage(storeMessages.affiliateCountryLabel)}
-            value={values.address.country}
-            onChange={handleChange}
-            onBlur={handleBlur}
-          />
+        <div className={style["affiliate-form__col"]}>
+          <div>
+            <label htmlFor={intl.formatMessage(storeMessages.affiliateStreetLabel)}>
+              Rua:<span>*</span>
+            </label>
+            <input
+              name="address.street"
+              placeholder={intl.formatMessage(storeMessages.affiliateStreetLabel)}
+              value={values.address.street}
+              onChange={handleChange}
+              onBlur={handleBlur}
+            />
+          </div>
+          <div>
+            <label htmlFor={intl.formatMessage(storeMessages.affiliateDistrictLabel)}>
+              Bairro:<span>*</span>
+            </label>
+            <input
+              name="address.neighborhood"
+              placeholder={intl.formatMessage(
+                storeMessages.affiliateDistrictLabel
+              )}
+              value={values.address.neighborhood}
+              onChange={handleChange}
+              onBlur={handleBlur}
+            />
+          </div>
+          <div>
+            <label htmlFor={intl.formatMessage(storeMessages.affiliateCityLabel)}>
+              Cidade:<span>*</span>
+            </label>
+            <input
+              name="address.city"
+              placeholder={intl.formatMessage(storeMessages.affiliateCityLabel)}
+              value={values.address.city}
+              onChange={handleChange}
+              onBlur={handleBlur}
+            />
+          </div>
+          <div>
+            <label htmlFor={intl.formatMessage(storeMessages.affiliateCountryLabel)}>
+              País:<span>*</span>
+            </label>
+            <input
+              name="address.country"
+              placeholder={intl.formatMessage(
+                storeMessages.affiliateCountryLabel
+              )}
+              value={values.address.country}
+              onChange={handleChange}
+              onBlur={handleBlur}
+            />
+          </div>
         </div>
       </div>
     </div>

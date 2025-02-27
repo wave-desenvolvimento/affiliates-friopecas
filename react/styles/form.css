@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=MuseoModerno:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&display=swap');
+
+:root {
+    --primary: #004B87;
+    --secondary: #1DA7E0;
+    --gray: #7B7B7B;
+    --gray-light: #F3F3F3;
+}
+
+.affiliate-form__page {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-family: "Quicksand", serif;
+    padding: 17.5px 16px;
+
+
+}
+
+@media (min-width:1024px) {
+    .affiliate-form__page {
+        margin: 35px auto;
+        max-width: 1440px;
+        padding: 0 32px;
+        gap: 40px;
+    }
+}
+
+.affiliate-form__container-wrapper {
+    max-width: 640px;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.affiliate-form__container {
+    width: 100%;
+    display: flex;
+    margin: auto;
+    background-color: var(--gray-light);
+    border-radius: 20px;
+    padding: 30px 20px;
+}
+
+.affiliate-form__submit {
+    display: flex;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    padding: 20px 0;
+    background-color: var(--primary);
+    color: var(--gray-light);
+    font-weight: 700;
+    border-radius: 10px;
+    border: none;
+}
