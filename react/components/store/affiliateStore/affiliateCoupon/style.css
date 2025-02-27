@@ -65,13 +65,14 @@
     line-height: 20px;
     cursor: pointer;
 }
-.coupon-info{
+
+.coupon-info {
     display: flex;
     align-items: center;
 }
+
 .coupon-info-title {
     color: var(--gray);
-    text-align: justify;
     font-family: var(--font-primary);
     font-size: 12px;
     font-style: normal;
@@ -87,9 +88,24 @@
     font-weight: 400;
     line-height: normal;
 }
-.coupon-container{
+
+.coupon-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); 
+    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, auto);
     gap: 10px;
+    align-items: flex-end;
+}
+.coupon-info--container{
+    display: flex;
+    align-items:flex-start;
+    flex-direction: column;
+
+    width: 200px;
+    height: 140px;
+}
+
+.coupon-card__container .coupon-info > div{
+height: 100%;
+
 }

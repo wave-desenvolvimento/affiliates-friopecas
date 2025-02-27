@@ -44,16 +44,22 @@ const AffiliateCoupon = () => {
             {couponInfo.coupons.map((coupon, index) => (
                 <CouponCard key={index} discount={coupon.discount} code={coupon.code} />
             ))}
-            <div>
+            <div className={style["coupon-info--container"]}>
                 <div className={style["coupon-info"]}>
-                    <Info />
-                    <p className={style["coupon-info-title"]}>
-                        {couponInfo.title}
-                    </p>
+                    <div>
+                        <Info />
+
+                    </div>
+                    <div>
+
+                        <p className={style["coupon-info-title"]}>
+                            {couponInfo.title}
+                        </p>
+                        <p className={style["coupon-info-subtitle"]}>
+                            {couponInfo.description}
+                        </p>
+                    </div>
                 </div>
-                <p className={style["coupon-info-subtitle"]}>
-                    {couponInfo.description}
-                </p>
             </div>
         </div>
     );
