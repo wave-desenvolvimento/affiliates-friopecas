@@ -1,11 +1,11 @@
 {
   "store.affiliates": {
     "title": "Affiliate Store",
-    "path": "/affiliates/:affiliateId"
+    "path": "/affiliates/teste"
   },
   "store.affiliates-profile": {
     "title": "Affiliate Profile",
-    "path": "/affiliates/:affiliateId/profile"
+    "path": "/affiliates/teste/profile"
   },
   "store.affiliate-form": {
     "title": "Affiliate Form",

@@ -51,5 +51,8 @@
   },
   "affiliate-benefits": {
     "component": "BenefitsList"
+  },
+  "affiliate-coupon": {
+    "component": "AffiliateCoupon"
   }
 }

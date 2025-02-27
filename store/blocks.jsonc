@@ -11,6 +11,22 @@
   },
   "store.affiliate-form": {
     "children": [
+      "flex-layout.row#affiliate-page"
+    ]
+  },
+  "flex-layout.row#affiliate-page": {
+    "title": "Componentes  da página",
+    "props": {
+      "blockClass": "affiliate-page-form"
+    },
+    "children": [
+      "flex-layout.col#affiliate-page-components"
+    ]
+  },
+  "flex-layout.col#affiliate-page-components": {
+    "children": [
+      "affiliate-infocard",
+      "affiliate-login",
       "affiliate-form",
       "affiliate-benefits"
     ]
@@ -24,7 +40,8 @@
   "affiliate-validator": {
     "props": {
       "Valid": "affiliate-template",
-      "Invalid": "affiliate-invalid-template"
+      "Invalid": "affiliate-template"
+      // "Invalid": "affiliate-invalid-template"
     }
   },
   "flex-layout.row#profile": {
