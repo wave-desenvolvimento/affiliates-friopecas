@@ -1,19 +1,30 @@
 {
   "affiliate-template": {
+    "children": ["flex-layout.row#affiliate-valid-template-acess"]
+  },
+  "flex-layout.row#affiliate-valid-template-acess": {
+    "props": {
+      "blockClass": "affiliate-valid-template-acess"
+    },
+    "children": ["flex-layout.col#valid-template"]
+  },
+  "flex-layout.col#valid-template": {
     "children": [
-      "flex-layout.row#banner",
-      "affiliate-coupon",
+      "flex-layout.row#affiliate-banner",
+      "flex-layout.row#components-valid-template",
       "affiliate-profile-button",
       "search-result-layout.customQuery#affiliate"
     ]
   },
-  "flex-layout.row#banner": {
-    "children": ["image#affiliate-banner"]
+  "flex-layout.row#components-valid-template": {
+    "children": ["affiliate-quick-acess", "affiliate-coupon"]
   },
-  "image#affiliate-banner": {
+  "flex-layout.row#affiliate-banner": {
+    "title": "Banner de afiliado",
     "props": {
-      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/VTEX_Logo.svg/400px-VTEX_Logo.svg.png"
-    }
+      "blockClass": ["container", "affiliate-banner"]
+    },
+    "children": ["affiliate-image"]
   },
   "search-result-layout.customQuery#affiliate": {
     "props": {

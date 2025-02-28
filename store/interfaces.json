@@ -54,5 +54,11 @@
   },
   "affiliate-coupon": {
     "component": "AffiliateCoupon"
+  },
+  "affiliate-quick-acess": {
+    "component": "AffiliateQuickAcess"
+  },
+  "affiliate-image": {
+    "component": "AffiliateImage"
   }
 }
