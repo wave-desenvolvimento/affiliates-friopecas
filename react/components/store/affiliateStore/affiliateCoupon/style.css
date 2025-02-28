@@ -68,7 +68,8 @@
 
 .coupon-info {
     display: flex;
-    align-items: center;
+    align-items: start;
+    gap: 4px;
 }
 
 .coupon-info-title {
@@ -82,30 +83,66 @@
 
 .coupon-info-subtitle {
     font-family: var(--font-primary);
-    font-family: Quicksand;
     font-size: 12px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    color: var(--gray);
 }
 
-.coupon-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, auto);
-    gap: 10px;
-    align-items: flex-end;
+
+.coupon-container::-webkit-scrollbar {
+    display: none;
 }
-.coupon-info--container{
+
+@media (min-width:1024px) {
+    .coupon-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, auto);
+        align-items: flex-end;
+
+        width: fit-content;
+        height: fit-content;
+        gap: 20px;
+    }
+
+    .coupon-info--container {
+        width: 200px;
+        height: 140px;
+    }
+
+    .coupon-info {
+        display: flex;
+        align-items: center;
+    }
+}
+
+.coupon-info--container {
     display: flex;
-    align-items:flex-start;
+    align-items: flex-start;
     flex-direction: column;
 
-    width: 200px;
-    height: 140px;
 }
 
-.coupon-card__container .coupon-info > div{
-height: 100%;
 
+.coupon-card__container .coupon-info>div {
+    height: 100%;
+
+}
+
+.coupon-container .coupon-wrapper-mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.coupon-container-slider {
+    display: flex;
+    overflow-x: scroll;
+    gap: 20px;
+}
+
+.coupon-container-slider::-webkit-scrollbar {
+    display: none;
 }

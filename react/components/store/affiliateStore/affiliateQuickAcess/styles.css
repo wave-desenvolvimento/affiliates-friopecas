@@ -14,11 +14,13 @@
   gap: 20px;
   flex-direction: column;
 }
-.quickAcess-wrapper{
+
+.quickAcess-wrapper {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
+
 .quickAcess-title {
   display: flex;
   align-items: center;
@@ -27,7 +29,7 @@
 
 .quickAcess-title p {
   font-family: Quicksand;
-  font-size: 17px;
+  font-size: 14px;
   font-style: normal;
   font-weight: 700;
   line-height: 22px;
@@ -36,7 +38,7 @@
 
 .quickAcess-subtitle {
   font-family: var(--font-primary);
-  font-size: 40px;
+  font-size: 30px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
@@ -44,9 +46,27 @@
   margin: 0;
 }
 
+@media (min-width:1024px) {
+
+  .quickAcess-subtitle span,
+  .quickAcess-subtitle {
+    font-size: 40px;
+  }
+
+  .quickAcess-title p {
+    font-size: 17px;
+  }
+
+  .quickAcessgrid-btn {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+}
+
 .quickAcess-subtitle span {
   font-family: var(--font-primary);
-  font-size: 40px;
+  font-size: 30px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
@@ -102,6 +122,7 @@
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+  justify-content: center;
 
 }
 
@@ -111,7 +132,12 @@
 }
 
 .quickAcessgrid-btn {
+  gap: 10px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+}
+
+.quickAcessgrid-btn .quickAcessgrid-btn--first-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 10px;
 }

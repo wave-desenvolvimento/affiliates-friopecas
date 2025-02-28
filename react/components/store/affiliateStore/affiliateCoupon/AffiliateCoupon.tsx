@@ -11,6 +11,7 @@ const CouponCard = ({ discount, code }: { discount: string; code: string }) => {
         setTimeout(() => setCopied(false), 4000);
     };
 
+
     return (
         <div className={style['coupon-card__container']}>
             <p className={style['coupon-card__title']}> <span>{discount}</span> OFF</p>
@@ -38,29 +39,65 @@ const AffiliateCoupon = () => {
             { discount: "5%", code: "DESCONTO5" },
         ]
     };
+    const isMobile = window.innerWidth < 728
 
     return (
         <div className={style['coupon-container']}>
-            {couponInfo.coupons.map((coupon, index) => (
-                <CouponCard key={index} discount={coupon.discount} code={coupon.code} />
-            ))}
-            <div className={style["coupon-info--container"]}>
-                <div className={style["coupon-info"]}>
-                    <div>
-                        <Info />
+            {isMobile ? (
+                <div className={style['coupon-wrapper-mobile']}>
+                    <div className={style['coupon-container-slider']}>
 
+                        {couponInfo.coupons.map((coupon, index) => (
+                            <CouponCard key={index} discount={coupon.discount} code={coupon.code} />
+                        ))}
                     </div>
-                    <div>
+                    <div className={style["coupon-info--container"]}>
+                        <div className={style["coupon-info"]}>
+                            <div>
+                                <Info />
 
-                        <p className={style["coupon-info-title"]}>
-                            {couponInfo.title}
-                        </p>
-                        <p className={style["coupon-info-subtitle"]}>
-                            {couponInfo.description}
-                        </p>
+                            </div>
+                            <div>
+
+                                <p className={style["coupon-info-title"]}>
+                                    {couponInfo.title}
+                                </p>
+                                <p className={style["coupon-info-subtitle"]}>
+                                    {couponInfo.description}
+                                </p>
+                            </div>
+                        </div>
                     </div>
+
                 </div>
-            </div>
+            ) : (
+                <>
+                    {
+                        couponInfo.coupons.map((coupon, index) => (
+                            <CouponCard key={index} discount={coupon.discount} code={coupon.code} />
+                        ))
+                    }
+                    <div className={style["coupon-info--container"]}>
+                        <div className={style["coupon-info"]}>
+                            <div>
+                                <Info />
+
+                            </div>
+                            <div>
+
+                                <p className={style["coupon-info-title"]}>
+                                    {couponInfo.title}
+                                </p>
+                                <p className={style["coupon-info-subtitle"]}>
+                                    {couponInfo.description}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </>
+            )
+            }
+
         </div>
     );
 };

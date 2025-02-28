@@ -25,8 +25,10 @@ const ClubeFriopecas: StorefrontFunctionComponent<ClubeFriopecasProps> = ({
     // subtitle = "Aproveite os benefícios do Clube Friopeças!",
     // content = "Acessos rápidos:"
 }) => {
+    const isMobile = window.innerWidth < 728
     return (
         <div className={styles.container}>
+
             <div className={styles["quickAcess-container"]}>
                 <div className={styles["quickAcess-wrapper"]}>
 
@@ -39,24 +41,51 @@ const ClubeFriopecas: StorefrontFunctionComponent<ClubeFriopecasProps> = ({
                         do Clube Friopeças!</h3>
 
                     <p className={styles['quickAcess-label']}>Acessos rápidos:</p>
-                    <div className={styles['quickAcessgrid-btn']}>
-                        <a href="" className={styles['quickAcess-btn1']}>
-                            <User />
-                            Minha Conta
-                        </a>
-                        <a href="" className={styles['quickAcess-btn1']}>
-                            <Training />
-                            Treinamentos
-                        </a>
-                        <a href="" className={styles['quickAcess-btn2']}>
-                            <Invoice />
-                            Extrato de Comissões
-                        </a>
-                        <a href="" className={styles['quickAcess-btn3']}>
-                            <Phone />
-                            Suporte
-                        </a>
-                    </div>
+                    {
+                        isMobile ? (
+                            <div className={styles['quickAcessgrid-btn']}>
+                                <div className={styles['quickAcessgrid-btn--first-row']}>
+
+                                    <a href="" className={styles['quickAcess-btn1']}>
+                                        <User />
+                                        Minha Conta
+                                    </a>
+                                    <a href="" className={styles['quickAcess-btn1']}>
+                                        <Training />
+                                        Treinamentos
+                                    </a>
+                                </div>
+                                <a href="" className={styles['quickAcess-btn2']}>
+                                    <Invoice />
+                                    Extrato de Comissões
+                                </a>
+                                <a href="" className={styles['quickAcess-btn3']}>
+                                    <Phone />
+                                    Suporte
+                                </a>
+                            </div>
+                        ) : (
+                            <div className={styles['quickAcessgrid-btn']}>
+                                <a href="" className={styles['quickAcess-btn1']}>
+                                    <User />
+                                    Minha Conta
+                                </a>
+                                <a href="" className={styles['quickAcess-btn1']}>
+                                    <Training />
+                                    Treinamentos
+                                </a>
+                                <a href="" className={styles['quickAcess-btn2']}>
+                                    <Invoice />
+                                    Extrato de Comissões
+                                </a>
+                                <a href="" className={styles['quickAcess-btn3']}>
+                                    <Phone />
+                                    Suporte
+                                </a>
+                            </div>
+                        )
+                    }
+
                 </div>
             </div>
         </div>
