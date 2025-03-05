@@ -17,6 +17,9 @@
     ]
   },
   "flex-layout.row#components-valid-template": {
+    "props": {
+      "blockClass": "components-valid-template"
+    },
     "children": ["affiliate-quick-acess", "affiliate-coupon"]
   },
   "flex-layout.row#affiliate-banner": {

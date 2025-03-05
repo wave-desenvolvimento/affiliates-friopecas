@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import style from './style.css';
-import { Info, Copy } from '../../Icons'
+import { Info, Copy, SvgInfocard } from '../../Icons'
 
 const CouponCard = ({ discount, code }: { discount: string; code: string }) => {
     const [copied, setCopied] = useState(false);
@@ -42,62 +42,73 @@ const AffiliateCoupon = () => {
     const isMobile = window.innerWidth < 728
 
     return (
-        <div className={style['coupon-container']}>
-            {isMobile ? (
-                <div className={style['coupon-wrapper-mobile']}>
-                    <div className={style['coupon-container-slider']}>
-
-                        {couponInfo.coupons.map((coupon, index) => (
-                            <CouponCard key={index} discount={coupon.discount} code={coupon.code} />
-                        ))}
-                    </div>
-                    <div className={style["coupon-info--container"]}>
-                        <div className={style["coupon-info"]}>
-                            <div>
-                                <Info />
-
-                            </div>
-                            <div>
-
-                                <p className={style["coupon-info-title"]}>
-                                    {couponInfo.title}
-                                </p>
-                                <p className={style["coupon-info-subtitle"]}>
-                                    {couponInfo.description}
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
+        <div className={style['quickAcess-coupom-Container']}>
+            <div>
+                <div className={style["quickAcess-title"]}>
+                    <SvgInfocard />
+                    <p>Clube Friopeças</p>
                 </div>
-            ) : (
-                <>
-                    {
-                        couponInfo.coupons.map((coupon, index) => (
-                            <CouponCard key={index} discount={coupon.discount} code={coupon.code} />
-                        ))
-                    }
-                    <div className={style["coupon-info--container"]}>
-                        <div className={style["coupon-info"]}>
-                            <div>
-                                <Info />
 
-                            </div>
-                            <div>
+                <h3 className={style["quickAcess-subtitle"]}>Aproveite os <span> benefícios </span>
+                    do Clube Friopeças!</h3>
+            </div>
+            <div className={style['coupon-container']}>
+                {isMobile ? (
+                    <div className={style['coupon-wrapper-mobile']}>
+                        <div className={style['coupon-container-slider']}>
 
-                                <p className={style["coupon-info-title"]}>
-                                    {couponInfo.title}
-                                </p>
-                                <p className={style["coupon-info-subtitle"]}>
-                                    {couponInfo.description}
-                                </p>
+                            {couponInfo.coupons.map((coupon, index) => (
+                                <CouponCard key={index} discount={coupon.discount} code={coupon.code} />
+                            ))}
+                        </div>
+                        <div className={style["coupon-info--container"]}>
+                            <div className={style["coupon-info"]}>
+                                <div>
+                                    <Info />
+
+                                </div>
+                                <div>
+
+                                    <p className={style["coupon-info-title"]}>
+                                        {couponInfo.title}
+                                    </p>
+                                    <p className={style["coupon-info-subtitle"]}>
+                                        {couponInfo.description}
+                                    </p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </>
-            )
-            }
 
+                    </div>
+                ) : (
+                    <>
+                        {
+                            couponInfo.coupons.map((coupon, index) => (
+                                <CouponCard key={index} discount={coupon.discount} code={coupon.code} />
+                            ))
+                        }
+                        <div className={style["coupon-info--container"]}>
+                            <div className={style["coupon-info"]}>
+                                <div>
+                                    <Info />
+
+                                </div>
+                                <div>
+
+                                    <p className={style["coupon-info-title"]}>
+                                        {couponInfo.title}
+                                    </p>
+                                    <p className={style["coupon-info-subtitle"]}>
+                                        {couponInfo.description}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </>
+                )
+                }
+
+            </div>
         </div>
     );
 };

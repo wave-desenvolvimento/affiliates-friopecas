@@ -4,12 +4,7 @@
     padding: 0 16px;
 }
 
-@media (min-width:1024px) {
-    .flexRowContent--container {
-        width: 100%;
-        padding: 0 32px;
-    }
-}
+
 
 .flexRowContent--affiliate-page-form {
     display: flex;
@@ -26,4 +21,21 @@
 
 .flexRowContent--affiliate-banner :global(.vtex-store-components-3-x-imageElement) {
     width: 100%;
+}
+
+.flexRowContent--components-valid-template {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+@media (min-width:1024px) {
+    .flexRowContent--container {
+        width: 100%;
+        padding: 0 32px;
+    }
+
+    .flexRowContent--components-valid-template {
+        display: flex;
+        flex-direction: column !important;
+    }
 }

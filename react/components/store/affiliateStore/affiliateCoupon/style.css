@@ -8,6 +8,31 @@
     --font-primary: "Quicksand", serif;
 }
 
+.quickAcess-title {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.quickAcess-title p {
+    font-family: Quicksand;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 22px;
+    color: var(--secondary);
+}
+
+.quickAcess-subtitle {
+    font-family: var(--font-primary);
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    color: var(--primary);
+    margin: 0;
+}
+
 .coupon-card__container {
     background-color: var(--gray-light);
 
@@ -95,7 +120,26 @@
     display: none;
 }
 
+.quickAcess-coupom-Container {
+    display: flex;
+    flex-direction: column;
+}
+
+.quickAcess-coupom-Container>div {
+    margin-bottom: 20px;
+}
+
 @media (min-width:1024px) {
+
+    .quickAcess-subtitle span,
+    .quickAcess-subtitle {
+        font-size: 40px;
+    }
+
+    .quickAcess-title p {
+        font-size: 17px;
+    }
+
     .coupon-container {
         display: grid;
         grid-template-columns: repeat(3, 1fr);

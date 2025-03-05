@@ -11,8 +11,16 @@
 
 .quickAcess-container {
   display: flex;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.quickAcess-subcontainer {
+  display: flex;
   gap: 20px;
   flex-direction: column;
+  width: 100%;
 }
 
 .quickAcess-wrapper {
@@ -21,41 +29,11 @@
   gap: 20px;
 }
 
-.quickAcess-title {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
 
-.quickAcess-title p {
-  font-family: Quicksand;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 22px;
-  color: var(--secondary);
-}
-
-.quickAcess-subtitle {
-  font-family: var(--font-primary);
-  font-size: 30px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  color: var(--primary);
-  margin: 0;
-}
 
 @media (min-width:1024px) {
 
-  .quickAcess-subtitle span,
-  .quickAcess-subtitle {
-    font-size: 40px;
-  }
 
-  .quickAcess-title p {
-    font-size: 17px;
-  }
 
   .quickAcessgrid-btn {
     display: grid;

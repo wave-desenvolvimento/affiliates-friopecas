@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./styles.css";
-import { User, SvgInfocard, Training, Phone, Invoice } from '../../Icons'
+import { User, Training, Phone, Invoice } from '../../Icons'
 
 interface QuickAccessItem {
     label: string;
@@ -27,18 +27,10 @@ const ClubeFriopecas: StorefrontFunctionComponent<ClubeFriopecasProps> = ({
 }) => {
     const isMobile = window.innerWidth < 728
     return (
-        <div className={styles.container}>
+        <div className={styles['quickAcess-container']}>
 
-            <div className={styles["quickAcess-container"]}>
+            <div className={styles["quickAcess-subcontainer"]}>
                 <div className={styles["quickAcess-wrapper"]}>
-
-                    <div className={styles["quickAcess-title"]}>
-                        <SvgInfocard />
-                        <p>Clube Friopeças</p>
-                    </div>
-
-                    <h3 className={styles["quickAcess-subtitle"]}>Aproveite os <span> benefícios </span>
-                        do Clube Friopeças!</h3>
 
                     <p className={styles['quickAcess-label']}>Acessos rápidos:</p>
                     {
