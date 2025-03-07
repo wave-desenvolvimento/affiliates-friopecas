@@ -11,10 +11,14 @@ export const addAffiliate = async (
   { newAffiliate }: MutationAddAffiliateArgs,
   { clients: { affiliates } }: Context
 ) => {
+
+  console.log("newAffiliate", newAffiliate)
+
   const { slug, email } = newAffiliate
   const errors: Error[] = []
 
   if (!isSlugValid(slug)) {
+    console.log("isSlugValid", !isSlugValid(slug))
     pushErrors(
       {
         message: 'Slug is not valid, must be alphanumeric',
@@ -24,11 +28,13 @@ export const addAffiliate = async (
     )
   }
 
+  console.log("slug", slug);
   const affiliatesInDbBySlug = await findDocumentsByField<Affiliates>(
     affiliates,
     'slug',
     slug
   )
+  console.log('affiliatesInDbBySlug', affiliatesInDbBySlug)
 
   if (affiliatesInDbBySlug?.length > 0) {
     pushErrors(
@@ -45,6 +51,7 @@ export const addAffiliate = async (
     'email',
     email
   )
+  console.log('affiliatesInDbByEmail', affiliatesInDbByEmail)
 
   if (affiliatesInDbByEmail?.length > 0) {
     pushErrors(
@@ -64,7 +71,9 @@ export const addAffiliate = async (
     ...newAffiliate,
   } as Affiliates
 
-  const { DocumentId } = await affiliates.save(mdDocument)
+  const response = await affiliates.save(mdDocument)
 
-  return affiliates.get(DocumentId, ['_all'])
+  console.log('response', response)
+
+  return affiliates.get(response.DocumentId, ['_all'])
 }

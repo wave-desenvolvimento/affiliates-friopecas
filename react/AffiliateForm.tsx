@@ -38,6 +38,7 @@ export interface ValueType {
     gtmId: string
   }
 }
+
 interface ToastProps {
   message: string
   duration: number
@@ -47,6 +48,8 @@ interface ToastProps {
 function AffiliateForm() {
   const intl = useIntl()
   const [addAffiliate, { loading, error, data }] = useMutation(ADD_AFFILIATE)
+  console.log("error", error)
+  console.log("data", data)
 
   const initialValues = {
     name: '',
