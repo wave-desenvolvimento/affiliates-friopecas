@@ -4,8 +4,6 @@
     padding: 0 16px;
 }
 
-
-
 .flexRowContent--affiliate-page-form {
     display: flex;
     flex-direction: column;
@@ -28,6 +26,31 @@
     flex-direction: column-reverse;
 }
 
+.flexRowContent--affiliate-valid-template-acess .stretchChildrenWidth .flexCol,
+.flexRowContent--affiliate-page-form .stretchChildrenWidth .flexCol {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: 20px 0;
+
+}
+
+.flexRowContent--components-valid-template {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 20px;
+}
+
+.flexRow--affiliate-valid-template-acess {
+    margin: 20px 0;
+}
+
+.flexRowContent--affiliate-valid-template-acess .stretchChildrenWidth .flexCol {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
 @media (min-width:1024px) {
     .flexRowContent--container {
         width: 100%;
@@ -37,5 +60,25 @@
     .flexRowContent--components-valid-template {
         display: flex;
         flex-direction: column !important;
+    }
+
+    .flexRowContent--affiliate-valid-template-acess .stretchChildrenWidth .flexCol,
+    .flexRowContent--affiliate-page-form .stretchChildrenWidth .flexCol {
+        gap: 40px;
+        margin: 40px 0;
+    }
+
+    .flexRowContent--components-valid-template {
+        display: flex;
+        flex-direction: row;
+        gap: 40px;
+    }
+
+    .flexRow--affiliate-valid-template-acess {
+        margin: 40px 0;
+    }
+
+    .flexRowContent--affiliate-valid-template-acess .stretchChildrenWidth .flexCol {
+        gap: 20px;
     }
 }

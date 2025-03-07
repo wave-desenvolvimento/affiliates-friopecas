@@ -10,16 +10,9 @@
 .affiliate-form__page {
     display: flex;
     flex-direction: column;
-    gap: 20px;
     font-family: "Quicksand", serif;
 
 
-}
-
-@media (min-width:1024px) {
-    .affiliate-form__page {
-        gap: 40px;
-    }
 }
 
 .affiliate-form__container-wrapper {

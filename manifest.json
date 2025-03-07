@@ -25,6 +25,7 @@
     "vtex.device-detector": "0.x"
   },
   "builders": {
+    "styles": "2.x",
     "node": "6.x",
     "docs": "0.x",
     "react": "3.x",
@@ -97,7 +98,9 @@
   },
   "billingOptions": {
     "type": "free",
-    "availableCountries": ["*"],
+    "availableCountries": [
+      "*"
+    ],
     "support": {
       "url": "https://support.vtex.com/hc/requests"
     }
